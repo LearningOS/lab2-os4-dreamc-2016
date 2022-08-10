@@ -1,5 +1,5 @@
 #![no_std]
-
+#![feature(drain_filter)]
 extern crate alloc;
 
 mod block_dev;

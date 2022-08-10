@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+
 #![feature(panic_info_message)]
 #![feature(alloc_error_handler)]
 
@@ -24,6 +25,7 @@ mod task;
 mod timer;
 mod trap;
 
+
 core::arch::global_asm!(include_str!("entry.asm"));
 core::arch::global_asm!(include_str!("link_app.S"));
 
@@ -47,7 +49,6 @@ pub fn rust_main() -> ! {
     println!("[kernel] back to world!");
     mm::remap_test();
     trap::init();
-    //trap::enable_interrupt();
     trap::enable_timer_interrupt();
     timer::set_next_trigger();
     task::run_first_task();

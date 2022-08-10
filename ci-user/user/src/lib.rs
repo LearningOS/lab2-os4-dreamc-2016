@@ -2,7 +2,7 @@
 #![feature(linkage)]
 #![feature(panic_info_message)]
 #![feature(alloc_error_handler)]
-
+#![feature(drain_filter)]
 #[macro_use]
 pub mod console;
 mod lang_items;
